@@ -4,3 +4,7 @@ Start Zoo Keeper: zookeeper-server-start.sh config/zookeeper.properties
 Update the path of data directory to your preferred directory:  file name: zookeeper.properties  property name: dataDir
 update the path of kafka logs to your preferred directory. file name: config/server.properties property name: logs.dir
 start kafka server: kafka-server-start.sh config/server.properties
+List the topics: kafka-topics.sh --zookeeper 127.0.0.1:2181 --list
+Creating a topic: kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --create --partitions 3 --replication-factor 1
+To see the details of topic: kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic my_topic --describe
+to delete a topic: kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic my_topic --delete
