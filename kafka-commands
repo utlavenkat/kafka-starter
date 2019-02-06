@@ -1,0 +1,2 @@
+Check Kafka PATH in bash profile : cat ~/.bash_profile
+Edit bash profile: nano ~/.bash_profile
