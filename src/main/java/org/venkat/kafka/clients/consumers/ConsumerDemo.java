@@ -1,4 +1,4 @@
-package org.venkat.kafka.consumers;
+package org.venkat.kafka.clients.consumers;
 
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -34,7 +34,7 @@ public class ConsumerDemo {
         //poll for new data
         while (true) {
             ConsumerRecords<String,String> consumerRecords = consumer.poll(Duration.ofMillis(1000L));
-            consumerRecords.forEach(consumerRecord -> logger.info("Topic::"+consumerRecord.topic() +"\t Partition::"+consumerRecord.partition() +"\t "+consumerRecord.offset()));
+            consumerRecords.forEach(consumerRecord -> logger.info("Topic::"+consumerRecord.topic() +"\t Partition::"+consumerRecord.partition() +"\t "+consumerRecord.offset() +"\t Message::"+consumerRecord.value()));
         }
     }
 }
